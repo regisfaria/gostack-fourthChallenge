@@ -42,7 +42,7 @@ export default function App() {
             </View>
 
             <View style={styles.likesContainer}>
-              <Text style={styles.likeText} testID={`repository-likes-${repository.id}`}>{repository.likes} likes</Text>
+        <Text style={styles.likeText} testID={`repository-likes-${repository.id}`}>{repository.likes} {(repository.likes > 1) ? "curtidas": "curtida"}</Text>
             </View>
 
             <TouchableOpacity
@@ -50,7 +50,7 @@ export default function App() {
               onPress={() => handleLikeRepository(repository.id)}
               testID={`like-button-${repository.id}`}
             >
-              <Text style={styles.buttonText}>Like</Text>
+              <Text style={styles.buttonText}>Curtir</Text>
             </TouchableOpacity>
           </View>
         ))}
